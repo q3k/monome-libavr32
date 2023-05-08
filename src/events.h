@@ -30,6 +30,10 @@ typedef enum {
   kEventHidDisconnect,
   kEventHidPacket,
   kEventHidTimer,
+  // MultiHID
+  kEventMultihidConnect,
+  kEventMultihidDisconnect,
+  kEventMultihidTimer,
   // MSC
   kEventMscConnect,
   kEventMscDisconnect,
