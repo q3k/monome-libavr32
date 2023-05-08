@@ -3,21 +3,21 @@
 
 #include "kbd.h"
 
-static s8 old_frame[8];
+static u8 old_keys[6];
 
 bool frame_compare(u8 data) {
 	u8 i;
-	for( i = 2; i < 8; i++ )
-		if( old_frame[ i ] == data )
+	for( i = 0; i < 6; i++ )
+		if( old_keys[ i ] == data )
 			return( true );
 
  	return( false );
 }
 
-extern void set_old_frame(const s8 *data) {
+extern void set_old_keys(const u8 *keys) {
 	u8 i;
-	for(i = 2; i<8; i++)
-		old_frame[i] = data[i];
+	for(i = 0; i<6; i++)
+		old_keys[i] = keys[i];
 }
 
 

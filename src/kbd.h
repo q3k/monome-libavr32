@@ -49,9 +49,15 @@
 /**/
 
 
+typedef struct {
+    uint8_t modifiers;
+    uint8_t padding;
+    uint8_t keys[6];
+} hid_boot_keyboard_report_t;
+
 extern u8 hid_to_ascii_raw(u8 data);
 extern u8 hid_to_ascii(u8 data, u8 mod);
 extern bool frame_compare(u8 data);
-extern void set_old_frame(const s8 *data);
+extern void set_old_keys(const u8 *data);
 
 #endif
