@@ -18,6 +18,7 @@
 #include "types.h"
 
 #include "midi.h"
+#include "usb_protocol_hid.h"
 #include "usb_protocol_midi.h"
 #include "uhi_midi.h"
 
@@ -164,7 +165,6 @@ uhc_enum_status_t uhi_midi_install(uhc_device_t* dev) {
                     print_dbg_hex(ptr_iface->bInterfaceSubClass);
                 #endif
                 if (ptr_iface->bInterfaceClass == HID_CLASS){
-                    print_dbg("\r\n got HID interface");
                     break;
                 }
                 iface_supported = false;
